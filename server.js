@@ -19,7 +19,9 @@ const startServer = async () => {
 
     // Middleware
     app.use(express.json());
-    app.use(cors());
+    app.use(cors({
+      origin: "https://telemind-frontend.onrender.com"
+    }));
 
     // Base Route - Check if server is running
     app.get("/", (req, res) => {
